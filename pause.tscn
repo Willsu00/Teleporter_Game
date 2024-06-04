@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhv2pk3nj1rc4"]
+
+[ext_resource type="FontFile" uid="uid://3ksg1xqoat5a" path="res://Assets/Minecraft.ttf" id="2_il730"]
+
+[sub_resource type="GDScript" id="GDScript_142bv"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+"
+
+[node name="pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_142bv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.737255)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -43.5
+offset_right = 287.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_il730")
+theme_override_font_sizes/font_size = 86
+text = "Game Paused"
+
+[node name="continue" type="Button" parent="ColorRect/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = 58.5
+offset_right = 137.0
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_il730")
+theme_override_font_sizes/font_size = 46
+text = "Continue"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7d35v5fmxkr"]
+
+[ext_resource type="Script" path="res://Scenes/Hazards/LeftB.gd" id="1_kv1m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xp1d"]
+size = Vector2(20, 323)
+
+[node name="LeftB" type="Node2D" groups=["Hazard"]]
+script = ExtResource("1_kv1m6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -9.0
+offset_top = -162.0
+offset_right = 10.0
+offset_bottom = 161.0
+color = Color(1, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2xp1d")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=3 uid="uid://c4yti6mi4iv8r"]
+
+[ext_resource type="Texture2D" uid="uid://cmtupigpq24ah" path="res://Assets/Sprites/Player_Sprites/Idle/1.png" id="2_e5kdd"]
+[ext_resource type="Script" path="res://Assets/Player/Player.gd" id="2_rqluv"]
+[ext_resource type="Texture2D" uid="uid://drim0qsyqtwtb" path="res://Assets/Sprites/Player_Sprites/Idle/2.png" id="3_aqtfy"]
+[ext_resource type="Texture2D" uid="uid://ddk6a1od12qwh" path="res://Assets/Sprites/Player_Sprites/Idle/3.png" id="4_yo1d8"]
+[ext_resource type="Texture2D" uid="uid://bx5sa74yh0rxk" path="res://Assets/Sprites/Player_Sprites/Idle/4.png" id="5_vojqx"]
+[ext_resource type="Texture2D" uid="uid://csfo61mg5s7b2" path="res://Assets/Sprites/Player_Sprites/Idle/5.png" id="6_xlsh6"]
+[ext_resource type="Texture2D" uid="uid://pawnbuon162c" path="res://Assets/Sprites/Player_Sprites/Idle/6.png" id="7_jqc27"]
+[ext_resource type="Texture2D" uid="uid://b0kvwk5mbih8k" path="res://Assets/Sprites/Player_Sprites/Idle/7.png" id="8_vkw7f"]
+[ext_resource type="Texture2D" uid="uid://b64bf8sf2hvsn" path="res://Assets/Sprites/Player_Sprites/Jump/1.png" id="9_qmsfu"]
+[ext_resource type="Texture2D" uid="uid://bn0abaoax0hfa" path="res://Assets/Sprites/Player_Sprites/Jump/3.png" id="11_my3ol"]
+[ext_resource type="Texture2D" uid="uid://dcmxt8enyauvm" path="res://Assets/Sprites/Player_Sprites/Run/1.png" id="12_55ruy"]
+[ext_resource type="Texture2D" uid="uid://bfydu57qltxrc" path="res://Assets/Sprites/Player_Sprites/Run/2.png" id="13_22bnk"]
+[ext_resource type="Texture2D" uid="uid://duomgh7spfuio" path="res://Assets/Sprites/Player_Sprites/Run/3.png" id="14_8kic7"]
+[ext_resource type="Texture2D" uid="uid://lp5uawnyrkyr" path="res://Assets/Sprites/Player_Sprites/Run/4.png" id="15_671f1"]
+[ext_resource type="Texture2D" uid="uid://0em5ns5efhsj" path="res://Assets/Sprites/Player_Sprites/Run/5.png" id="16_73gjt"]
+[ext_resource type="Texture2D" uid="uid://b03hqbfb81fp4" path="res://Assets/Sprites/Player_Sprites/Run/6.png" id="17_vd80c"]
+[ext_resource type="Texture2D" uid="uid://ci5juqxkrkma7" path="res://Assets/Sprites/Player_Sprites/Run/7.png" id="18_e2i23"]
+[ext_resource type="Texture2D" uid="uid://cxgothvd1o4p0" path="res://Assets/Sprites/Player_Sprites/Run/8.png" id="19_hqysl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0k2wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_my3ol")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e5kdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aqtfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yo1d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vojqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xlsh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jqc27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vkw7f")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qmsfu")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_55ruy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_22bnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8kic7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_671f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_73gjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vd80c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e2i23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hqysl")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mc6q"]
+radius = 21.0
+height = 92.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("2_rqluv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(2.05357, 2.05357)
+sprite_frames = SubResource("SpriteFrames_0k2wg")
+animation = &"Fall"
+autoplay = "Idle"
+offset = Vector2(-7.62939e-06, -41.8783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -46)
+shape = SubResource("CapsuleShape2D_3mc6q")
+
+[node name="Tp_timer" type="Timer" parent="."]
+wait_time = 5.0

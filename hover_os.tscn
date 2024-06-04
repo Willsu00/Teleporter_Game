@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://baay05x0un0im"]
+
+[ext_resource type="AudioStream" uid="uid://h4qeheoi52xb" path="res://Assets/coin-collect-retro-8-bit-sound-effect-145251.mp3" id="1_dcdhm"]
+
+[node name="HoverOS" type="AudioStreamPlayer"]
+stream = ExtResource("1_dcdhm")
+bus = &"SFX"

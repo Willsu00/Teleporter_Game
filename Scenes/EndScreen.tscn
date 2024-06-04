@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqul16i6l4it7"]
+
+[ext_resource type="FontFile" uid="uid://3ksg1xqoat5a" path="res://Assets/Minecraft.ttf" id="1_ftow1"]
+[ext_resource type="Script" path="res://Scenes/EndScreen.gd" id="1_wigia"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wigia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -77.5
+offset_right = 37.0
+offset_bottom = -54.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.305882, 0.305882, 0.305882, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_ftow1")
+theme_override_font_sizes/font_size = 86
+text = "You Died!"
+
+[node name="Final Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = 6.0
+offset_right = 69.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ftow1")
+theme_override_font_sizes/font_size = 24
+
+[node name="To Menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = 135.5
+offset_right = 113.5
+offset_bottom = 220.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ftow1")
+theme_override_font_sizes/font_size = 36
+text = "Play Again"
+
+[connection signal="mouse_entered" from="To Menu" to="." method="_on_to_menu_mouse_entered"]
+[connection signal="pressed" from="To Menu" to="." method="_on_to_menu_pressed"]

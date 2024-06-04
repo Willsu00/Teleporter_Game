@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://prsfngcwk74a"]
+
+[ext_resource type="AudioStream" uid="uid://d1d12l6xevew3" path="res://Assets/one_beep-99630.mp3" id="1_7g1sn"]
+
+[node name="clickSFX" type="AudioStreamPlayer"]
+stream = ExtResource("1_7g1sn")
+bus = &"SFX"

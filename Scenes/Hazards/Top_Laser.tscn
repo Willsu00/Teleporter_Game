@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8d7n71g8wdh6"]
+
+[ext_resource type="Script" path="res://Scenes/Hazards/Top_Laser.gd" id="1_r3fb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr164"]
+size = Vector2(576.5, 20)
+
+[node name="TopLaser" type="Node2D" groups=["Hazard"]]
+script = ExtResource("1_r3fb2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -286.0
+offset_top = -9.0
+offset_right = 289.0
+offset_bottom = 10.0
+color = Color(1, 0, 0, 1)
+
+[node name="TopA2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopA2D"]
+position = Vector2(1.25, 1)
+shape = SubResource("RectangleShape2D_fr164")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="TopA2D" to="." method="_on_top_a_2d_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

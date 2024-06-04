@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7epfdwgblub8"]
+
+[ext_resource type="AudioStream" uid="uid://cwwqn3i4wbvd7" path="res://Assets/Loop 8 bit game bgm.mp3" id="1_r3fse"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_r3fse")
+autoplay = true

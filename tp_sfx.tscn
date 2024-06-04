@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1t7da425efm5"]
+
+[ext_resource type="AudioStream" uid="uid://bxvtqq3olegqi" path="res://Assets/glitch-bass-101008.mp3" id="1_rjbha"]
+
+[node name="tpSFX" type="AudioStreamPlayer"]
+stream = ExtResource("1_rjbha")
+volume_db = 10.0
+bus = &"TPSFX"

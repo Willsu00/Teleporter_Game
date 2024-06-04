@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxvtxw55xh1km"]
+
+[ext_resource type="AudioStream" uid="uid://dsi2rapm8oo0y" path="res://Assets/8-bit-explosion-95847.mp3" id="1_gjk6x"]
+
+[node name="deathsound" type="AudioStreamPlayer"]
+stream = ExtResource("1_gjk6x")
+bus = &"TPSFX"
